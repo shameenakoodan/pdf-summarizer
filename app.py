@@ -1,5 +1,5 @@
 import streamlit as st
-from pdf_reader import extract_text_from_pdf
+from pdf_reader import extract_text, extract_text_from_pdf
 from summarizer import summarize_text   
 from fpdf import FPDF
 def create_pdf(summary_text):
@@ -22,7 +22,15 @@ uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
 if uploaded_file is not None:
     st.info("Extracting text from PDF...")
-    text = extract_text_from_pdf(uploaded_file)
+
+    # Save uploaded file to a temporary path
+    temp_path = "temp.pdf"
+    with open(temp_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
+
+    # Now pass the file path, not the UploadedFile object
+    text = extract_text(temp_path)
+
 
     if len(text.strip()) == 0:
         st.error("No readable text found in this PDF.")
