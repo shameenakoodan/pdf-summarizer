@@ -118,7 +118,7 @@ streamlit run app.py
 
 ---
 
-## 🚀 Future Improvements
+<!-- ## 🚀 Future Improvements
 
 * Add support for scanned PDFs (OCR)
 * Multi-language summarization
@@ -126,7 +126,7 @@ streamlit run app.py
 * Add summary length control (short / medium / detailed)
 * Save user history
 
----
+--- -->
 
 ## 👤 Author
 
