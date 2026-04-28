@@ -118,13 +118,13 @@ streamlit run app.py
 
 ---
 
-<!-- ## 🚀 Future Improvements
+## 🚀 Other Features
 
 * Add support for scanned PDFs (OCR)
 * Multi-language summarization
 * Highlight key insights / bullet summaries
 * Add summary length control (short / medium / detailed)
-* Save user history
+<!-- * Save user history
 
 --- -->
 

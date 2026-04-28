@@ -2,6 +2,7 @@ import streamlit as st
 from pdf_reader import extract_text, extract_text_from_pdf
 from summarizer import summarize_text   
 from fpdf import FPDF
+
 def create_pdf(summary_text):
     pdf = FPDF()
     pdf.add_page()
