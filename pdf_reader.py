@@ -1,6 +1,7 @@
 from pypdf import PdfReader
 from pdf2image import convert_from_path
 import pytesseract
+from langdetect import detect
 
 def extract_text_with_ocr(pdf_path):
     pages = convert_from_path(pdf_path)
@@ -45,3 +46,9 @@ def extract_text_from_pdf(file_path):
         if text:
             all_text += text + "\n"
     return all_text
+
+def detect_language(text):
+    try:
+        return detect(text)
+    except:
+        return "en"

@@ -37,12 +37,13 @@ if uploaded_file is not None:
     else:
         st.success("Text extracted successfully!")
 
+        summary_length = st.selectbox(
+            "Summary length",
+            ["short", "medium", "detailed"]
+        )
         if st.button("Summarize PDF"):
             with st.spinner("Summarizing... this may take a moment"):
                 summary = summarize_text(text)
-
-            st.subheader("📌 Summary")
-            st.write(summary)
             if(summary):
                 st.subheader("Summary")
                 st.write(summary)
