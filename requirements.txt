@@ -6,3 +6,4 @@ fpdf
 pytesseract
 Pillow
 pdf2image
+langdetect
