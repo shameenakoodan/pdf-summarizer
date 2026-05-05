@@ -1,5 +1,5 @@
 import streamlit as st
-from pdf_reader import extract_text, extract_text_from_pdf
+from pdf_reader import extract_text
 from summarizer import summarize_text   
 from fpdf import FPDF
 
@@ -13,7 +13,7 @@ def create_pdf(summary_text):
     for line in summary_text.split("\n"):
         pdf.multi_cell(0, 10, line)
 
-    return pdf.output(dest="S").encode("latin-1")
+    return bytes(pdf.output(dest="S"))
 
 st.set_page_config(page_title="AI PDF Summarizer", layout="wide")
 st.title(("AI PDF Summarizer"))
